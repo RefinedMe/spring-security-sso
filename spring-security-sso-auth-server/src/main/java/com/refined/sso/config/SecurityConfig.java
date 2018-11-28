@@ -2,6 +2,7 @@ package com.refined.sso.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception { // @formatter:off
         http.requestMatchers()
-                .antMatchers("/login", "/user/info", "/oauth/authorize")
+                .antMatchers("/login", "/oauth/authorize")
                 .and()
                 .authorizeRequests()
                 .anyRequest()

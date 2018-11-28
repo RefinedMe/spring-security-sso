@@ -12,10 +12,10 @@ security:
     client:
       clientId: SampleClientId
       clientSecret: secret
-      accessTokenUri: http://refinedall.cn:8081/auth/oauth/token
-      userAuthorizationUri: http://refinedall.cn:8081/auth/oauth/authorize
+      accessTokenUri: http://localhost:8081/auth/oauth/token
+      userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
     resource:
-      userInfoUri: http://refinedall.cn:8081/auth/user/me
+      userInfoUri: http://localhost:8081/auth/user/me
 spring:
   thymeleaf:
     cache: false        

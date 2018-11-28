@@ -7,6 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -21,16 +22,12 @@ public class UserController {
         System.out.println(principal);
         return principal;
     }
+
     @RequestMapping("/user/info")
-    public Authentication info(HttpServletRequest request, HttpServletResponse response) {
-        Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+    public Authentication info(HttpServletRequest request, HttpServletResponse response, String a) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(authentication);
 //        System.out.println(principal);
-        try {
-            response.sendRedirect("http://10.125.4.32:8070/birmy/#/home/dashboard");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return authentication;
     }
 }
