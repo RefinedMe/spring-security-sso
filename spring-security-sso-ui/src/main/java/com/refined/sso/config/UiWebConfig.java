@@ -1,4 +1,4 @@
-package com.refined.sso;
+package com.refined.sso.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,14 +17,6 @@ public class UiWebConfig implements WebMvcConfigurer {
     @Override
     public void configureDefaultServletHandling(final DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
-    }
-
-    @Override
-    public void addViewControllers(final ViewControllerRegistry registry) {
-        registry.addViewController("/")
-            .setViewName("forward:/index");
-        registry.addViewController("/index");
-        registry.addViewController("/securedPage");
     }
 
     @Override
